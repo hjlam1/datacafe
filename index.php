@@ -85,6 +85,11 @@
             url: "demo.php",
             type: 'POST',
             data: $("#myform").serialize(),
+            success: function () {
+              var messageEl = myform.querySelector( '.final-message' );
+              messageEl.innerHTML = 'Thanks for your payment! Go get your cookie.';
+              classie.addClass( messageEl, 'show' );
+            }
 
 
        });
@@ -99,9 +104,7 @@
         */
 
         // let's just simulate something...
-        var messageEl = myform.querySelector( '.final-message' );
-        messageEl.innerHTML = 'Thanks for your payment! Go get your cookie.';
-        classie.addClass( messageEl, 'show' );
+        
       }
     } );
   </script>
